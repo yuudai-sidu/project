@@ -1,7 +1,17 @@
-production: adapter
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  database: message-board_production
-  username: message-board
-  password: <%= ENV['MESSAGE-BOARD_DATABASE_PASSWORD'] %>
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password:
+  host: localhost
+
+development:
+  <<: *default
+  database: projects_development
+
+production:
+  <<: *default
+  database: projects_production
+  username: projects
+  password: <%= ENV['PROJECTS_DATABASE_PASSWORD'] %>
