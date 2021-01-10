@@ -8,7 +8,7 @@
   </div>
 </section>
 
-<section class="section">
+<div class="section">
   <div class="container">
     <div class="columns is-multiline">
       <% @users.each do |user| %>
@@ -18,7 +18,7 @@
               <div class="card-image">
                 <figure class="image">
                   <%= link_to user_path(user) do %>
-                    <%= attachment_image_tag user, :profile_image, fallback: "no.png" %>
+                    <%= attachment_image_tag user, :profile_image, fallback: "no.png", alt: "no" %>
                   <% end %>
                 </figure>
               </div>
@@ -38,7 +38,7 @@
       <% end %>
     </div>
   </div>
-</section>
+</div>
 
 <!--トップへ戻る-->
 <div class="margin-center">

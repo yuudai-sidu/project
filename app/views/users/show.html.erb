@@ -8,14 +8,14 @@
   </div>
 </section>
 
-<section class="section">
+<div class="section">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="columns is-centered">
           <div class="column is-4">
             <figure class="image is-96x96"  style="margin-left: auto; margin-right: auto;">
-              <%= attachment_image_tag @user, :profile_image, fallback: "no.png", class: "profile_image is-rounded" %>
+              <%= attachment_image_tag @user, :profile_image, fallback: "no.png", alt: "no", class: "profile_image is-rounded" %>
             </figure>
           </div>
           <div class="column is-8">
@@ -46,10 +46,10 @@
       </div>
     </div>
   </div>
-</section>
+</div>
 
 
-<section class="section">
+<div class="section">
   <div class="container">
     <div class="columns is-multiline">
       <% @user.projects.each do |project| %>
@@ -58,7 +58,7 @@
             <div class="card-image">
               <figure class="image is-4by3">
                   <%= link_to project_path(project) do %>
-                  <%= attachment_image_tag project, :image, fallback: "no.png" %>
+                  <%= attachment_image_tag project, :image, fallback: "no.png", alt: "no" %>
                   <% end %>
               </figure>
             </div>
@@ -96,7 +96,7 @@
       <% end %>
     </div>
   </div>
-</section>
+</div>
 
 <!--トップへ戻る-->
 <div class="margin-center">

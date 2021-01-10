@@ -8,7 +8,7 @@
   </div>
 </section>
 
-<section class="section">
+<div class="section">
   <div class="container">
     <div class="columns is-multiline">
       <% @projects.each do |project| %>
@@ -17,15 +17,15 @@
             <div class="card-image">
               <figure class="image is-4by3">
                 <%= link_to project_path(project) do %>
-                  <%= attachment_image_tag project, :image, fallback: "no.png", class: "image" %>
-                <% end %>
+                  <%= attachment_image_tag project, :image, fallback: "no.png", alt: "no" %>
+                 <% end %>
               </figure>
             </div>
             <div class="card-content">
               <div class="media">
                 <div class="media-left">
                   <figure class="image is-48x48">
-                    <%= attachment_image_tag project.user, :profile_image, fallback: "no.png", class: "profile_image" %>
+                    <%= attachment_image_tag project.user, :profile_image, fallback: "no.png", alt: "no", class: "profile_image" %>
                   </figure>
                 </div>
                 <div class="media-content">
@@ -42,9 +42,18 @@
       <% end %>
       </div>
   </div>
-</section>
+</div>
 
 <!--トップへ戻る-->
 <div class="margin-center">
  <%= link_to "このページトップへ", projects_path %>  
 </div>
+
+
+
+
+
+
+
+
+

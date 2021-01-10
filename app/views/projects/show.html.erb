@@ -1,4 +1,4 @@
-<section class="hero is-success">
+<div class="hero is-success">
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
@@ -6,16 +6,16 @@
       </h1>
     </div>
   </div>
-</section>
+</div>
 
-<section class="section">
+<div class="section">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-6">
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
-              <%= attachment_image_tag @project, :image, fallback: "no.png", class: "image" %>
+              <%= attachment_image_tag @project, :image, fallback: "no.png", alt: "no", class: "image" %>
             </figure>
           </div>
           <div class="card-content">
@@ -40,9 +40,9 @@
           </div>
         </div>
       </div>
-
+<!--article-->
       <div class="column is-4">
-        <article class="panel is-link">
+        <div class="panel is-link">
           <p class="panel-heading">
             名前： <%= @project.user.name %>
           </p>
@@ -57,8 +57,10 @@
             </span>
             <%= @project.user.name %> さんのページへ
           <% end %>
-        </article>
+        </div>
+        <!--article-->
       </div>
     </div>
   </div>
-</section>
+</div>
+
