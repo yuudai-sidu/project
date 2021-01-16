@@ -4,7 +4,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.string :title
       t.text :body
-      t.string :image_id
+      t.string :image
 
       t.timestamps
     end

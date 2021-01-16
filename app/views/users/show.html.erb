@@ -15,7 +15,8 @@
         <div class="columns is-centered">
           <div class="column is-4">
             <figure class="image is-96x96"  style="margin-left: auto; margin-right: auto;">
-              <%= attachment_image_tag @user, :profile_image, fallback: "no.png", alt: "no", class: "profile_image is-rounded" %>
+              <%= image_tag @user.profile_image.url, class: "profile_image is-rounded" if @user.profile_image? %>
+    
             </figure>
           </div>
           <div class="column is-8">
@@ -58,7 +59,8 @@
             <div class="card-image">
               <figure class="image is-4by3">
                   <%= link_to project_path(project) do %>
-                  <%= attachment_image_tag project, :image, fallback: "no.png", alt: "no" %>
+                  <%= image_tag @user.profile_image.url if @user.profile_image? %>
+                 
                   <% end %>
               </figure>
             </div>
